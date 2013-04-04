@@ -2,15 +2,13 @@
 
 class IndexController extends Zend_Controller_Action
 {
- 
-    public function init()
-    {
-        /* Initialize action controller here */
-    }
- 
+    
     public function indexAction()
     {
-        echo 'aaa';
+        $dbFetch = DBConnect::getAll();        
+        
+        
+        $this->view->nesto = $dbFetch;
     }
 }
 
