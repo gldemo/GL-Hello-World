@@ -41,6 +41,19 @@ class IndexController extends Zend_Controller_Action
     {
         // action body
     }
+    
+     /**
+     * This method is for database testing
+     */
+    public function listAction()
+    {
+        // action body
+       $dbAdapter = Zend_Registry::getInstance()->dbAdapter;
+       $dbAdapter->setFetchMode(Zend_Db::FETCH_OBJ);
+       $persons   = $dbAdapter->fetchall("select * from list");
+
+       $this->view->persons = $persons;
+    }
 }
 
 
