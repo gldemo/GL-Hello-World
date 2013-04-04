@@ -1,0 +1,57 @@
+<?php
+/**
+* Database index PHTML file
+*
+*   
+* LICENSE: Commercial
+* 
+* @package Application
+* @copyright Ivan Dudas
+* @license http://www.example.com/license
+* @version  1.0.0
+* @link  http://www.example.com
+* @since 2013
+* @see ErrorController::errorcontrollAction()
+*/
+
+$db = $this->db;
+
+?>
+
+<div class="container" style="margin-top: 60px;">
+    
+    <div class="page-header">
+        <h1>GL demo<small> Database insert example</small></h1>
+    </div> 
+   
+   <table class="table table-bordered">
+       
+       <caption>This is a placeholder for table.</caption>
+       
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Date</th>            
+          </tr>
+        </thead>
+        <tbody>
+            
+            <?php
+            
+            foreach ($db as $oneField) {
+                echo '<tr>';                
+                echo '<td class="span4">'.$oneField->name.'</td>';
+                echo '<td class="span4">'.$oneField->phone.'</td>';
+                echo '<td class="span4">'.$oneField->date.'</td>';
+                echo '</tr>';
+            }
+            
+            ?>
+            
+        </tbody>
+       
+        
+   </table>
+    
+</div>
