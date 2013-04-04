@@ -14,7 +14,7 @@
 * @see ErrorController::errorcontrollAction()
 */
 
-$db = $this->db;
+$persons = $this->persons;
 
 ?>
 
@@ -30,6 +30,7 @@ $db = $this->db;
        
         <thead>
           <tr>
+            <th>Num.</th>
             <th>Name</th>
             <th>Phone</th>
             <th>Date</th>            
@@ -39,11 +40,12 @@ $db = $this->db;
             
             <?php
             
-            foreach ($db as $oneField) {
-                echo '<tr>';                
-                echo '<td class="span4">'.$oneField->name.'</td>';
-                echo '<td class="span4">'.$oneField->phone.'</td>';
-                echo '<td class="span4">'.$oneField->date.'</td>';
+            foreach ($persons as $key=>$onePerson) {
+                echo '<tr>';
+                echo '<td class="span2">'.$key.'</td>';
+                echo '<td class="span4">'.$onePerson->name.'</td>';
+                echo '<td class="span4">'.$onePerson->phone.'</td>';
+                echo '<td class="span2">'.$onePerson->date.'</td>';
                 echo '</tr>';
             }
             

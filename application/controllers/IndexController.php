@@ -12,6 +12,8 @@
 * @link  http://www.example.com
 * @since 2013
 */
+error_reporting(E_ALL);
+ini_set('display_errors', 'on');
 
 class IndexController extends Zend_Controller_Action
 {
@@ -28,17 +30,13 @@ class IndexController extends Zend_Controller_Action
         $this->view->db = $dbFetch;
     }
     
-        /**
-     * This method is for database testing
-     */
+    /**
+    * This method is for database testing
+    */
     public function listAction()
-    {
-        // action body
-       $dbAdapter = Zend_Registry::getInstance()->dbAdapter;
-       $dbAdapter->setFetchMode(Zend_Db::FETCH_OBJ);
-       $persons   = $dbAdapter->fetchall("select * from person");
-
-       $this->view->db = $persons;
+    {        
+       $persons = Person::getAllPersons();
+       $this->view->persons = $persons;
     }
 }
 
