@@ -1,6 +1,6 @@
-<?
+<?php
 /**
-* IndexController
+* DatabaseController
 *
 * LICENSE: Commercial
 * 
@@ -16,7 +16,7 @@
 
 
 /**
-* IndexController.
+* DatabaseController.
 *
 * LICENSE: Commercial
 * 
@@ -29,19 +29,31 @@
 * @since 2013
 */
 
-class IndexController extends Zend_Controller_Action
+class DatabaseController extends Zend_Controller_Action
 {
  
     public function init()
     {
+
         /* Initialize action controller here */
     }
  
+    /**
+     * This method is for database testing
+     */
     public function indexAction()
     {
         // action body
+       $dbAdapter = Zend_Registry::getInstance()->dbAdapter;
+       $dbAdapter->setFetchMode(Zend_Db::FETCH_OBJ);
+       $persons   = $dbAdapter->fetchall("select * from list");
+
+       $this->view->persons = $persons;
+    }
+    
+    public function insertAction()
+    {
+        
     }
 }
-
-
 ?>
