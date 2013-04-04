@@ -1,8 +1,39 @@
 <?php
+/**
+* ErrorController
+*
+* LICENSE: Commercial
+* 
+* @package CORE
+* @subpackage 
+* @copyright Ivan Dudas
+* @license http://www.example.com/license
+* @version  1.0.0
+* @link  http://www.example.com
+* @since 2013
+*/
 
+
+
+/**
+* ErrorController.
+*
+* LICENSE: Commercial
+* 
+* @package CORE
+* @subpackage 
+* @copyright Ivan Dudas
+* @license http://www.example.com/license
+* @version  1.0.0
+* @link  http://www.example.com
+* @since 2013
+*/
 class ErrorController extends Zend_Controller_Action
 {
  
+    /**
+     * This method handle server errors
+     */
     public function errorAction()
     {
         $errors = $this->_getParam('error_handler');
