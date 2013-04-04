@@ -9,6 +9,21 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view = $this->getResource('view');
         $view->doctype('XHTML1_STRICT');
     }
+    
+    protected function _initAutoloader()
+    {
+        // Require the autoloader class file
+        require_once 'Zend/Loader/Autoloader.php';
+        
+        // Fetch the Singleton instance of Zend_Loader_Autoloader
+        $autoloader = Zend_Loader_Autoloader::getInstance();
+
+        // Set the autoloader as a fallback autoloader (loads all namespaces by default)
+        $autoloader->setFallbackAutoloader(true);
+        
+        // Return the autoloader
+        return $autoloader;
+    }
 
     /**
      * Init database
