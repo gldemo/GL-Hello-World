@@ -1,0 +1,8 @@
+<phpunit bootstrap="./application/bootstrap.php"
+        colors="true"
+        format="frames"
+        todir="reports/">
+    <testsuite name="unittest">
+        <directory>./</directory>
+    </testsuite>
+</phpunit>
