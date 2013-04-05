@@ -61,9 +61,7 @@
         public function testBugDelete()
         {
             $bugsTable = new Person();
-
-
-            $data = array(1,2,3,4,5);
+            $data      = array(1,2,3,4,5);
             $bugsTable->delete($data);
             
             $ds = new Zend_Test_PHPUnit_Db_DataSet_QueryDataSet(
