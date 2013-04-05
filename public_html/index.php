@@ -17,7 +17,10 @@ $application = new Zend_Application(
     APPLICATION_ENV,
     APPLICATION_PATH . '/configs/application.xml'
 );
-$application->bootstrap()
-            ->run();
+$application->bootstrap();
+
+if(!defined('APP_RUN')) {
+        $application->run();
+    }
 
 ?>
