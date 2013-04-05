@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+    <dataset>
+        <person id="1" name="Marija"
+            phone="654/4564-465" date="2007-04-01 00:00:00"/>
+        <person id="2" name="Ana"
+            phone="023/456-66546" date="2007-04-02 00:00:00" />
+        <person id="3" name="Johan" 
+            phone="011/534-543" date="2007-04-03 00:00:00" />
+        <person id="4" name="Stephan" 
+            phone="875/3456-645" date="2007-04-04 00:00:00" />
+    </dataset>

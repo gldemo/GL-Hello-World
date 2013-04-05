@@ -1,5 +1,5 @@
 <?php 
-class ControllerTestCase extends Zend_Test_PHPUnit_ControllerTestCase
+class ControllerTestCase extends Zend_Test_PHPUnit_DatabaseTestCase
 {
     /**
      * @var Zend_Application 
@@ -8,7 +8,7 @@ class ControllerTestCase extends Zend_Test_PHPUnit_ControllerTestCase
     protected $application;
     
     public function setUp()
-    {        
+    {   
         $this->bootstrap = array($this, 'appBootstrap');
         parent::setUp();
     }
